@@ -21,10 +21,10 @@ function QuizView() {
 	const store = useContext(StoreContext);
 	const { selectedVerbs } = store;
 
-	const getNewRandom = (max) => {
+	const getNewIndex = (max) => {
 		const random = getRandom(max);
 		if (random === prevRandom) {
-			return getNewRandom(max);
+			return getNewIndex(max);
 		} else {
 			setPrevRandom((random))
 			return random;
@@ -38,7 +38,7 @@ function QuizView() {
 		setInputValue('');
 
 		if (selectedVerbs && selectedVerbs.length) {
-			const newIndex = getNewRandom(selectedVerbs.length);
+			const newIndex = getNewIndex(selectedVerbs.length);
 			const newVerb = selectedVerbs[newIndex];
 			setCurrentVerb(newVerb);
 		}

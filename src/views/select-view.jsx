@@ -4,7 +4,6 @@ import { Typography, Container, List, ListItem, ListItemText, ListSubheader, sty
 import styledComponent from "styled-components";
 import { StoreContext } from "../store";
 
-
 const DivGrid = styledComponent.div`
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
