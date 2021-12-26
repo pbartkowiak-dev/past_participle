@@ -5,4 +5,9 @@
 ![Select View](doc/select-view.png)
 
 
+##### Dev Notes
 
+Run project locally:
+```
+npm run start
+```
