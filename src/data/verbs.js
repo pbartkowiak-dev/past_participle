@@ -1,0 +1,636 @@
+export const verbs = [{
+	infinitiv: "anbieten",
+	imperfekt: "bot an",
+	partizip_ii: "angeboten",
+	translation_pol: "oferować",
+}, {
+	infinitiv: "anziehen",
+	imperfekt: "zog sich an",
+	partizip_ii: "sich angezogen",
+	translation_pol: "ubierać się",
+}, {
+	infinitiv: "auffallen",
+	imperfekt: "fiel auf",
+	partizip_ii: "aufgefallen",
+	translation_pol: "zwracać uwagę",
+}, {
+	infinitiv: "backen",
+	imperfekt: "buk/backte",
+	partizip_ii: "gebacken",
+	translation_pol: "piec",
+}, {
+	infinitiv: "befehlen",
+	imperfekt: "befahl",
+	partizip_ii: "befohlen",
+	translation_pol: "rozkazać",
+}, {
+	infinitiv: "beginnen",
+	imperfekt: "begann",
+	partizip_ii: "begonnen",
+	translation_pol: "zaczynać",
+}, {
+	infinitiv: "bekommen",
+	imperfekt: "bekam",
+	partizip_ii: "bekommen",
+	translation_pol: "otrzymywać",
+}, {
+	infinitiv: "biegen",
+	imperfekt: "bog",
+	partizip_ii: "gebogen",
+	translation_pol: "skręcać",
+}, {
+	infinitiv: "bieten",
+	imperfekt: "bot",
+	partizip_ii: "geboten",
+	translation_pol: "oferować",
+}, {
+	infinitiv: "bitten",
+	imperfekt: "bat",
+	partizip_ii: "gebeten",
+	translation_pol: "prosić",
+}, {
+	infinitiv: "bleiben",
+	imperfekt: "blieb",
+	partizip_ii: "geblieben",
+	translation_pol: "pozostać",
+}, {
+	infinitiv: "braten",
+	imperfekt: "briet",
+	partizip_ii: "gebraten",
+	translation_pol: "piec/smażyć",
+}, {
+	infinitiv: "brechen",
+	imperfekt: "brach",
+	partizip_ii: "gebrochen",
+	translation_pol: "łamać",
+}, {
+	infinitiv: "brennen",
+	imperfekt: "brannte",
+	partizip_ii: "gebrannt",
+	translation_pol: "palić się",
+}, {
+	infinitiv: "bringen",
+	imperfekt: "brachte",
+	partizip_ii: "gebracht",
+	translation_pol: "przynosić",
+}, {
+	infinitiv: "denken",
+	imperfekt: "dachte",
+	partizip_ii: "gedacht",
+	translation_pol: "myśleć",
+}, {
+	infinitiv: "dürfen",
+	imperfekt: "durfte",
+	partizip_ii: "gedurft",
+	translation_pol: "móc",
+}, {
+	infinitiv: "empfehlen",
+	imperfekt: "empfahl",
+	partizip_ii: "empfohlen",
+	translation_pol: "polecić",
+}, {
+	infinitiv: "empfinden",
+	imperfekt: "empfand",
+	partizip_ii: "empfunden",
+	translation_pol: "odczuwać, doznać",
+}, {
+	infinitiv: "entscheiden",
+	imperfekt: "entschied",
+	partizip_ii: "entschieden",
+	translation_pol: "za/decydować",
+}, {
+	infinitiv: "erschrecken",
+	imperfekt: "erschrak",
+	partizip_ii: "erschrocken",
+	translation_pol: "przerazić",
+}, {
+	infinitiv: "essen",
+	imperfekt: "aß",
+	partizip_ii: "gegessen",
+	translation_pol: "jeść",
+}, {
+	infinitiv: "fahren",
+	imperfekt: "fuhr",
+	partizip_ii: "gefahren",
+	translation_pol: "jechać",
+}, {
+	infinitiv: "fallen",
+	imperfekt: "fiel",
+	partizip_ii: "gefallen",
+	translation_pol: "upadać",
+}, {
+	infinitiv: "fangen",
+	imperfekt: "fing",
+	partizip_ii: "gefangen",
+	translation_pol: "łapać",
+}, {
+	infinitiv: "finden",
+	imperfekt: "fand",
+	partizip_ii: "gefunden",
+	translation_pol: "znaleźć",
+}, {
+	infinitiv: "fliegen",
+	imperfekt: "flog",
+	partizip_ii: "geflogen",
+	translation_pol: "latać",
+}, {
+	infinitiv: "fliehen",
+	imperfekt: "floh",
+	partizip_ii: "geflohen",
+	translation_pol: "uciekać",
+}, {
+	infinitiv: "fließen",
+	imperfekt: "floss",
+	partizip_ii: "geflossen",
+	translation_pol: "płynąć",
+}, {
+	infinitiv: "fressen",
+	imperfekt: "fraß",
+	partizip_ii: "gefressen",
+	translation_pol: "żreć",
+}, {
+	infinitiv: "frieren",
+	imperfekt: "fror",
+	partizip_ii: "gefroren",
+	translation_pol: "marznąć",
+}, {
+	infinitiv: "gebaren",
+	imperfekt: "gebar",
+	partizip_ii: "geboren",
+	translation_pol: "rodzić",
+}, {
+	infinitiv: "geben",
+	imperfekt: "gab",
+	partizip_ii: "gegeben",
+	translation_pol: "dawać",
+}, {
+	infinitiv: "gehen",
+	imperfekt: "ging",
+	partizip_ii: "gegangen",
+	translation_pol: "iść",
+}, {
+	infinitiv: "gelingen",
+	imperfekt: "gelang",
+	partizip_ii: "gelungen",
+	translation_pol: "udać się",
+}, {
+	infinitiv: "gelten",
+	imperfekt: "galt",
+	partizip_ii: "gegolten",
+	translation_pol: "obowiązywać",
+}, {
+	infinitiv: "genießen",
+	imperfekt: "genoss",
+	partizip_ii: "genossen",
+	translation_pol: "rozkoszować się",
+}, {
+	infinitiv: "geschehen",
+	imperfekt: "geschah",
+	partizip_ii: "geschehen",
+	translation_pol: "wydarzyć się",
+}, {
+	infinitiv: "gewinnen",
+	imperfekt: "gewann",
+	partizip_ii: "gewonnen",
+	translation_pol: "wygrać",
+}, {
+	infinitiv: "gießen",
+	imperfekt: "goss",
+	partizip_ii: "gegossen",
+	translation_pol: "podlewać",
+}, {
+	infinitiv: "greifen",
+	imperfekt: "griff",
+	partizip_ii: "gegriffen",
+	translation_pol: "sięgać",
+}, {
+	infinitiv: "haben",
+	imperfekt: "hatte",
+	partizip_ii: "gehabt",
+	translation_pol: "mieć",
+}, {
+	infinitiv: "halten",
+	imperfekt: "hielt",
+	partizip_ii: "gehalten",
+	translation_pol: "trzymać",
+}, {
+	infinitiv: "hängen",
+	imperfekt: "hing",
+	partizip_ii: "gehangen",
+	translation_pol: "wisieć",
+}, {
+	infinitiv: "heben",
+	imperfekt: "hob",
+	partizip_ii: "gehoben",
+	translation_pol: "podnosić",
+}, {
+	infinitiv: "heißen",
+	imperfekt: "hieß",
+	partizip_ii: "geheißen",
+	translation_pol: "nazywać",
+}, {
+	infinitiv: "helfen",
+	imperfekt: "half",
+	partizip_ii: "geholfen",
+	translation_pol: "pomagać",
+}, {
+	infinitiv: "kennen",
+	imperfekt: "kannte",
+	partizip_ii: "gekannt",
+	translation_pol: "znać",
+}, {
+	infinitiv: "klingen",
+	imperfekt: "klang",
+	partizip_ii: "geklungen",
+	translation_pol: "brzmieć",
+}, {
+	infinitiv: "kommen",
+	imperfekt: "kam",
+	partizip_ii: "gekommen",
+	translation_pol: "przychodzić",
+}, {
+	infinitiv: "können",
+	imperfekt: "konnte",
+	partizip_ii: "gekonnt",
+	translation_pol: "móc",
+}, {
+	infinitiv: "laden",
+	imperfekt: "lud",
+	partizip_ii: "geladen",
+	translation_pol: "załadować",
+}, {
+	infinitiv: "lassen",
+	imperfekt: "ließ",
+	partizip_ii: "gelassen",
+	translation_pol: "pozwalać",
+}, {
+	infinitiv: "laufen",
+	imperfekt: "lief",
+	partizip_ii: "gelaufen",
+	translation_pol: "biec",
+}, {
+	infinitiv: "leiden",
+	imperfekt: "litt",
+	partizip_ii: "gelitten",
+	translation_pol: "cierpieć",
+}, {
+	infinitiv: "leihen",
+	imperfekt: "lieh",
+	partizip_ii: "geliehen",
+	translation_pol: "pożyczać",
+}, {
+	infinitiv: "lesen",
+	imperfekt: "las",
+	partizip_ii: "gelesen",
+	translation_pol: "czytać",
+}, {
+	infinitiv: "liegen",
+	imperfekt: "lag",
+	partizip_ii: "gelegen",
+	translation_pol: "leżeć",
+}, {
+	infinitiv: "lügen",
+	imperfekt: "log",
+	partizip_ii: "gelogen",
+	translation_pol: "kłamać",
+}, {
+	infinitiv: "messen",
+	imperfekt: "maß",
+	partizip_ii: "gemessen",
+	translation_pol: "mierzyć",
+}, {
+	infinitiv: "mögen",
+	imperfekt: "mochte",
+	partizip_ii: "gemocht",
+	translation_pol: "lubić",
+}, {
+	infinitiv: "müssen",
+	imperfekt: "musste",
+	partizip_ii: "gemusst",
+	translation_pol: "musieć",
+}, {
+	infinitiv: "nachdenken",
+	imperfekt: "dachte nach",
+	partizip_ii: "nachgedacht",
+	translation_pol: "rozmyślać",
+}, {
+	infinitiv: "nehmen",
+	imperfekt: "nahm",
+	partizip_ii: "genommen",
+	translation_pol: "brać",
+}, {
+	infinitiv: "nennen",
+	imperfekt: "nannte",
+	partizip_ii: "genannt",
+	translation_pol: "nazywać",
+}, {
+	infinitiv: "pfeifen",
+	imperfekt: "pfiff",
+	partizip_ii: "gepfiffen",
+	translation_pol: "gwizdać",
+}, {
+	infinitiv: "raten",
+	imperfekt: "riet",
+	partizip_ii: "geraten",
+	translation_pol: "radzić",
+}, {
+	infinitiv: "reißen",
+	imperfekt: "riss",
+	partizip_ii: "gerissen",
+	translation_pol: "rwać",
+}, {
+	infinitiv: "reiten",
+	imperfekt: "ritt",
+	partizip_ii: "geritten",
+	translation_pol: "jeździć konno",
+}, {
+	infinitiv: "rennen",
+	imperfekt: "rannte",
+	partizip_ii: "gerannt",
+	translation_pol: "pędzić, biec",
+}, {
+	infinitiv: "riechen",
+	imperfekt: "roch",
+	partizip_ii: "gerochen",
+	translation_pol: "pachnieć",
+}, {
+	infinitiv: "rufen",
+	imperfekt: "rief",
+	partizip_ii: "gerufen",
+	translation_pol: "wołać",
+}, {
+	infinitiv: "schaffen",
+	imperfekt: "schuf",
+	partizip_ii: "geschaffen",
+	translation_pol: "tworzyć",
+}, {
+	infinitiv: "scheinen",
+	imperfekt: "schien",
+	partizip_ii: "geschienen",
+	translation_pol: "świecić, wydać się",
+}, {
+	infinitiv: "schieben",
+	imperfekt: "schob",
+	partizip_ii: "geschoben",
+	translation_pol: "pchać",
+}, {
+	infinitiv: "schießen",
+	imperfekt: "schoss",
+	partizip_ii: "geschossen",
+	translation_pol: "strzelać",
+}, {
+	infinitiv: "schlafen",
+	imperfekt: "schlief",
+	partizip_ii: "geschlafen",
+	translation_pol: "spać",
+}, {
+	infinitiv: "schlagen",
+	imperfekt: "schlug",
+	partizip_ii: "geschlagen",
+	translation_pol: "bić",
+}, {
+	infinitiv: "schließen",
+	imperfekt: "schloss",
+	partizip_ii: "geschlossen",
+	translation_pol: "zamykać",
+}, {
+	infinitiv: "schmeißen",
+	imperfekt: "schmiss",
+	partizip_ii: "geschmissen",
+	translation_pol: "wyrzucić, ciskać",
+}, {
+	infinitiv: "schneiden",
+	imperfekt: "schnitt",
+	partizip_ii: "geschnitten",
+	translation_pol: "kroić",
+}, {
+	infinitiv: "schreiben",
+	imperfekt: "schrieb",
+	partizip_ii: "geschrieben",
+	translation_pol: "pisać",
+}, {
+	infinitiv: "schreien",
+	imperfekt: "schrie",
+	partizip_ii: "geschrien",
+	translation_pol: "krzyczeć",
+}, {
+	infinitiv: "schweigen",
+	imperfekt: "schwieg",
+	partizip_ii: "geschwiegen",
+	translation_pol: "milczeć",
+}, {
+	infinitiv: "schwimmen",
+	imperfekt: "schwamm",
+	partizip_ii: "geschwommen",
+	translation_pol: "pływać",
+}, {
+	infinitiv: "sehen",
+	imperfekt: "sah",
+	partizip_ii: "gesehen",
+	translation_pol: "widzieć",
+}, {
+	infinitiv: "sein",
+	imperfekt: "war",
+	partizip_ii: "gewesen",
+	translation_pol: "być",
+}, {
+	infinitiv: "senden",
+	imperfekt: "sandte",
+	partizip_ii: "gesandt",
+	translation_pol: "wysyłać",
+}, {
+	infinitiv: "singen",
+	imperfekt: "sang",
+	partizip_ii: "gesungen",
+	translation_pol: "śpiewać",
+}, {
+	infinitiv: "sinken",
+	imperfekt: "sank",
+	partizip_ii: "gesunken",
+	translation_pol: "opadać, tonąć",
+}, {
+	infinitiv: "sitzen",
+	imperfekt: "saß",
+	partizip_ii: "gesessen",
+	translation_pol: "siedzieć",
+}, {
+	infinitiv: "sollen",
+	imperfekt: "sollte",
+	partizip_ii: "gesollt",
+	translation_pol: "mieć powinność",
+}, {
+	infinitiv: "sprechen",
+	imperfekt: "sprach",
+	partizip_ii: "gesprochen",
+	translation_pol: "mówić",
+}, {
+	infinitiv: "springen",
+	imperfekt: "sprang",
+	partizip_ii: "gesprungen",
+	translation_pol: "skakać",
+}, {
+	infinitiv: "stechen",
+	imperfekt: "stach",
+	partizip_ii: "gestochen",
+	translation_pol: "kłuć",
+}, {
+	infinitiv: "stehen",
+	imperfekt: "stand",
+	partizip_ii: "gestanden",
+	translation_pol: "stać",
+}, {
+	infinitiv: "stehlen",
+	imperfekt: "stahl",
+	partizip_ii: "gestohlen",
+	translation_pol: "kraść",
+}, {
+	infinitiv: "steigen",
+	imperfekt: "stieg",
+	partizip_ii: "gestiegen",
+	translation_pol: "wchodzić, wspinać",
+}, {
+	infinitiv: "sterben",
+	imperfekt: "starb",
+	partizip_ii: "gestorben",
+	translation_pol: "umierać",
+}, {
+	infinitiv: "stinken",
+	imperfekt: "stank",
+	partizip_ii: "gestunken",
+	translation_pol: "śmierdzieć",
+}, {
+	infinitiv: "stoßen",
+	imperfekt: "stieß",
+	partizip_ii: "gestoßen",
+	translation_pol: "potrącić, uderzać",
+}, {
+	infinitiv: "streiten",
+	imperfekt: "stritt",
+	partizip_ii: "gestritten",
+	translation_pol: "kłócić się",
+}, {
+	infinitiv: "teilnehmen",
+	imperfekt: "nahm teil",
+	partizip_ii: "teilgenommen",
+	translation_pol: "uczestniczyć",
+}, {
+	infinitiv: "tragen",
+	imperfekt: "trug",
+	partizip_ii: "getragen",
+	translation_pol: "nosić",
+}, {
+	infinitiv: "treffen",
+	imperfekt: "traf",
+	partizip_ii: "getroffen",
+	translation_pol: "spotykać",
+}, {
+	infinitiv: "treten",
+	imperfekt: "trat",
+	partizip_ii: "getreten",
+	translation_pol: "wchodzić",
+}, {
+	infinitiv: "trinken",
+	imperfekt: "trank",
+	partizip_ii: "getrunken",
+	translation_pol: "pić",
+}, {
+	infinitiv: "trugen",
+	imperfekt: "trog",
+	partizip_ii: "getrogen",
+	translation_pol: "oszukiwać",
+}, {
+	infinitiv: "tun",
+	imperfekt: "tat",
+	partizip_ii: "getan",
+	translation_pol: "czynić, robić",
+}, {
+	infinitiv: "verbringen",
+	imperfekt: "verbrachte",
+	partizip_ii: "verbracht",
+	translation_pol: "spędzać",
+}, {
+	infinitiv: "vergessen",
+	imperfekt: "vergaß",
+	partizip_ii: "vergessen",
+	translation_pol: "zapominać",
+}, {
+	infinitiv: "verlieren",
+	imperfekt: "verlor",
+	partizip_ii: "verloren",
+	translation_pol: "tracić, gubić",
+}, {
+	infinitiv: "verschmelzen",
+	imperfekt: "verschmolz",
+	partizip_ii: "verschmolzen",
+	translation_pol: "stopić",
+}, {
+	infinitiv: "versprechen",
+	imperfekt: "versprach",
+	partizip_ii: "versprochen",
+	translation_pol: "obiecywać",
+}, {
+	infinitiv: "verzeihen",
+	imperfekt: "verzieh",
+	partizip_ii: "verziehen",
+	translation_pol: "wybaczyć",
+}, {
+	infinitiv: "wachsen",
+	imperfekt: "wuchs",
+	partizip_ii: "gewachsen",
+	translation_pol: "rosnąć",
+}, {
+	infinitiv: "waschen",
+	imperfekt: "wusch",
+	partizip_ii: "gewaschen",
+	translation_pol: "prać/myć",
+}, {
+	infinitiv: "wegwerfen",
+	imperfekt: "warf weg",
+	partizip_ii: "weggeworfen",
+	translation_pol: "wyrzucać",
+}, {
+	infinitiv: "wenden",
+	imperfekt: "wandte",
+	partizip_ii: "gewandt",
+	translation_pol: "zwracać się",
+}, {
+	infinitiv: "werben",
+	imperfekt: "warb",
+	partizip_ii: "geworben",
+	translation_pol: "reklamować",
+}, {
+	infinitiv: "werden",
+	imperfekt: "wurde",
+	partizip_ii: "geworden",
+	translation_pol: "stawać się, zostawać",
+}, {
+	infinitiv: "werfen",
+	imperfekt: "warf",
+	partizip_ii: "geworfen",
+	translation_pol: "rzucać",
+}, {
+	infinitiv: "wiegen",
+	imperfekt: "wog",
+	partizip_ii: "gewogen",
+	translation_pol: "ważyć",
+}, {
+	infinitiv: "wissen",
+	imperfekt: "wusste",
+	partizip_ii: "gewusst",
+	translation_pol: "wiedzieć",
+}, {
+	infinitiv: "wollen",
+	imperfekt: "wollte",
+	partizip_ii: "gewollt",
+	translation_pol: "chcieć",
+}, {
+	infinitiv: "ziehen",
+	imperfekt: "zog",
+	partizip_ii: "gezogen",
+	translation_pol: "ciągnąć",
+}, {
+	infinitiv: "zwingen",
+	imperfekt: "zwang",
+	partizip_ii: "gezwungen",
+	translation_pol: "zmuszać",
+}];
