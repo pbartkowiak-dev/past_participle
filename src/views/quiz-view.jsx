@@ -104,6 +104,7 @@ function QuizView() {
 						variant="outlined"
 						value={inputValue}
 						onChange={handleInput}
+						autoComplete="off"
 					/>
 				</Box>
 			</form>
