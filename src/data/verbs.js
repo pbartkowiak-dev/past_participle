@@ -37,7 +37,7 @@ export const verbs = [{
 	infinitiv: "biegen",
 	imperfekt: "bog",
 	partizip_ii: "gebogen",
-	translation_pol: "skręcać",
+	translation_pol: "zginać/skręcać",
 }, {
 	infinitiv: "bieten",
 	imperfekt: "bot",
