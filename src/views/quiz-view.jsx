@@ -1,5 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { Container, Typography, TextField, Box, styled, Alert } from '@mui/material';
+import React, { useContext, useEffect, useState } from 'react';
+import { Container, Typography, TextField, Box, styled, Alert, Button } from '@mui/material';
+import { StoreContext } from "../store";
+
+const getRandom = (max) => Math.floor(Math.random() * max);
 
 const Input = styled(TextField)(() => ({
 	minWidth: '360px',
@@ -10,21 +13,39 @@ const Input = styled(TextField)(() => ({
 
 function QuizView() {
 	const [inputValue, setInputValue] = useState('');
+	const [prevRandom, setPrevRandom] = useState(null);
 	const [hasError, setHasError] = useState(false);
 	const [currentVerb, setCurrentVerb] = useState({});
 	const [showTranslation, setShowTranslation] = useState(false);
+	const [showAnswer, setShowAnswer] = useState(false);
+	const store = useContext(StoreContext);
+	const { selectedVerbs } = store;
+
+	const getNewRandom = (max) => {
+		const random = getRandom(max);
+		if (random === prevRandom) {
+			return getNewRandom(max);
+		} else {
+			setPrevRandom((random))
+			return random;
+		}
+	}
 
 	const getNewVerb = () => {
+		setHasError(false);
+		setShowTranslation(false);
+		setShowAnswer(false);
+		setInputValue('');
 
+		if (selectedVerbs && selectedVerbs.length) {
+			const newIndex = getNewRandom(selectedVerbs.length);
+			const newVerb = selectedVerbs[newIndex];
+			setCurrentVerb(newVerb);
+		}
 	};
 
 	useEffect(() => {
-		setCurrentVerb({
-			infinitiv: "werden",
-			imperfekt: "wurde",
-			partizip_ii: "geworden",
-			translation_pol: "stawać się, zostawać",
-		})
+		getNewVerb();
 	}, []);
 
 	const handleSubmit = (event) => {
@@ -32,8 +53,6 @@ function QuizView() {
 
 		const isCorrect = inputValue.trim() === currentVerb.partizip_ii.trim();
 		if (isCorrect) {
-			setHasError(false)
-			setInputValue('');
 			getNewVerb();
 		} else {
 			setHasError(true);
@@ -42,8 +61,23 @@ function QuizView() {
 
 	const handleInput = (event) => {
 		setHasError(false);
-		setInputValue(event.target.value)
+		setShowAnswer(false);
+		setInputValue(event.target.value);
 	};
+
+	const handleShowAnswer = () => {
+		setShowAnswer(true);
+		setHasError(false);
+		setInputValue(currentVerb.partizip_ii);
+	};
+
+	if (selectedVerbs.length === 0) {
+		return (
+			<Container sx={{textAlign: 'center', marginTop: 10 }}>
+				<Alert severity="warning">Select some verbs first!</Alert>
+			</Container>
+		);
+	}
 
 	return (
 		<Container sx={{textAlign: 'center', marginTop: 10 }}>
@@ -74,6 +108,20 @@ function QuizView() {
 				</Box>
 			</form>
 			{ hasError && <Alert severity="error">This is not correct! Try again.</Alert>}
+			<Box sx={{height: '25px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+				{showAnswer
+					? <Button size="sm" onClick={getNewVerb}>Next Verb</Button>
+					: <Typography variant={"h6"}
+								  role="button"
+								  sx={{
+									  display: 'inline-block',
+									  color: 'lightgray',
+									  cursor: 'pointer',
+									  marginTop: 1
+								  }}
+								  onClick={handleShowAnswer}>Click to show the answer</Typography>
+				}
+			</Box>
 		</Container>
 	);
 }

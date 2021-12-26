@@ -634,3 +634,13 @@ export const verbs = [{
 	partizip_ii: "gezwungen",
 	translation_pol: "zmuszać",
 }];
+
+
+export const getVerbsGrouped = () => {
+	const verbsGrouped = []
+	const groupSize = 10;
+	for (let i = 0; i < verbs.length; i += groupSize) {
+		verbsGrouped.push(verbs.slice(i, i+ groupSize));
+	}
+	return verbsGrouped;
+}

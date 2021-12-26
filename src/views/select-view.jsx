@@ -1,13 +1,9 @@
-import React from 'react';
-import { verbs } from '../data/verbs';
+import React, { useContext } from 'react';
+import { getVerbsGrouped } from '../data/verbs';
 import { Typography, Container, List, ListItem, ListItemText, ListSubheader, styled, Checkbox, FormGroup, FormControlLabel } from '@mui/material';
 import styledComponent from "styled-components";
+import { StoreContext } from "../store";
 
-const verbsGrouped = []
-const groupSize = 10;
-for (let i = 0; i < verbs.length; i += groupSize) {
-	verbsGrouped.push(verbs.slice(i, i+ groupSize));
-}
 
 const DivGrid = styledComponent.div`
 	display: grid;
@@ -23,6 +19,25 @@ const StyledListItemText = styled(ListItemText)(() => ({
 }));
 
 function SelectView() {
+	const store = useContext(StoreContext);
+	const { selectedVerbGroups, setSelectedVerbGroups } = store;
+	const verbsGrouped = getVerbsGrouped();
+
+	const handleCheck = ({ target }) => {
+		const { value, checked } = target;
+
+		if (checked) {
+			setSelectedVerbGroups([
+				...selectedVerbGroups,
+				value
+			]);
+		} else {
+			setSelectedVerbGroups(
+				selectedVerbGroups.filter(selectedIndex => selectedIndex !== value)
+			);
+		}
+	};
+
 	return (
 		<Container>
 			<Typography variant="h4" as={"h1"} sx={{margin: '20px 0'}}>Select Verb Groups</Typography>
@@ -31,7 +46,14 @@ function SelectView() {
 					<List dense={true} key={index} subheader={
 						<ListSubheader component="div" sx={{paddingLeft: 0}}>
 							<FormGroup>
-								<FormControlLabel control={<Checkbox />} label={`Group ${index + 1}`} />
+								<FormControlLabel control={
+									<Checkbox
+										name={String(index)}
+										value={String(index)}
+										onChange={handleCheck}
+										checked={selectedVerbGroups.includes(String(index))}
+									/>
+								} label={`Group ${index + 1}`} />
 							</FormGroup>
 						</ListSubheader>
 					}>
