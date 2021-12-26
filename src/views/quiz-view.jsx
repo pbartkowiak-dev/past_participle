@@ -67,6 +67,7 @@ function QuizView() {
 
 	const handleShowAnswer = () => {
 		setShowAnswer(true);
+		setShowTranslation(true);
 		setHasError(false);
 		setInputValue(currentVerb.partizip_ii);
 	};
