@@ -6,7 +6,7 @@ export const verbs = [{
 }, {
 	infinitiv: "anziehen",
 	imperfekt: "zog sich an",
-	partizip_ii: "sich angezogen",
+	partizip_ii: "angezogen",
 	translation_pol: "ubierać się",
 }, {
 	infinitiv: "auffallen",
