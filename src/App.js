@@ -17,7 +17,7 @@ function App() {
               <AppBar position="static">
                   <Container sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                       { views.map(({ name, route }) => (
-                          <Link key={route} to={route}>
+                          <Link key={route} to={route} style={{ textDecoration: 'none' }}>
                               <Button role="link" sx={{ my: 2, color: 'white'}}>{name}</Button>
                           </Link>
                       ))}
