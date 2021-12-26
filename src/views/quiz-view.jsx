@@ -97,7 +97,7 @@ function QuizView() {
 									  onClick={() => setShowTranslation(true)}>Click to show translation</Typography>
 					}
 				</Box>
-				<Box sx={{ marginTop: 2, marginBottom: 2 }}>
+				<Box sx={{ marginTop: 2, marginBottom: 1 }}>
 					<Input
 						id="outlined-basic"
 						label="Enter Past Participle Form"
@@ -107,8 +107,7 @@ function QuizView() {
 					/>
 				</Box>
 			</form>
-			{ hasError && <Alert severity="error">This is not correct! Try again.</Alert>}
-			<Box sx={{height: '25px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+			<Box sx={{height: '25px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: 1 }}>
 				{showAnswer
 					? <Button size="sm" onClick={getNewVerb}>Next Verb</Button>
 					: <Typography variant={"h6"}
@@ -122,6 +121,7 @@ function QuizView() {
 								  onClick={handleShowAnswer}>Click to show the answer</Typography>
 				}
 			</Box>
+			{ hasError && <Alert severity="error">This is not correct! Try again.</Alert>}
 		</Container>
 	);
 }
