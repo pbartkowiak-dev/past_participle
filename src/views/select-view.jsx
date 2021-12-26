@@ -31,7 +31,7 @@ function SelectView() {
 					<List dense={true} key={index} subheader={
 						<ListSubheader component="div" sx={{paddingLeft: 0}}>
 							<FormGroup>
-								<FormControlLabel control={<Checkbox />} label={`Group ${index}`} />
+								<FormControlLabel control={<Checkbox />} label={`Group ${index + 1}`} />
 							</FormGroup>
 						</ListSubheader>
 					}>
