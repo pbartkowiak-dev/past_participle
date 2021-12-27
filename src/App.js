@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { HashRouter, Routes, Route, Link } from "react-router-dom";
 import SelectView from "./views/select-view";
 import QuizView from "./views/quiz-view";
 import { AppBar, Container, Button } from "@mui/material";
@@ -13,7 +13,7 @@ const views = [
 function App() {
   return (
     <StoreProvider>
-      <BrowserRouter>
+      <HashRouter>
         <AppBar position="static">
           <Container sx={{ flexGrow: 1, display: { md: "flex" } }}>
             {views.map(({ name, route }) => (
@@ -28,8 +28,9 @@ function App() {
         <Routes>
           <Route path="/" element={<SelectView />} />
           <Route path="/quiz" element={<QuizView />} />
+          <Route path="*" element={<SelectView />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </StoreProvider>
   );
 }
