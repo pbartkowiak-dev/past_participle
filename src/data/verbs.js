@@ -42,6 +42,18 @@ export const verbs = [
     translation_pol: "otrzymywać",
   },
   {
+    infinitiv: "betrügen",
+    imperfekt: "",
+    partizip_ii: "betrogen",
+    translation_pol: "oszukiwać",
+  },
+  {
+    infinitiv: "bewegen",
+    imperfekt: "",
+    partizip_ii: "bewogen",
+    translation_pol: "ruszać, nakłaniać",
+  },
+  {
     infinitiv: "biegen",
     imperfekt: "bog",
     partizip_ii: "gebogen",
@@ -52,6 +64,12 @@ export const verbs = [
     imperfekt: "bot",
     partizip_ii: "geboten",
     translation_pol: "oferować",
+  },
+  {
+    infinitiv: "binden",
+    imperfekt: "",
+    partizip_ii: "gebunden",
+    translation_pol: "wiązać",
   },
   {
     infinitiv: "bitten",
