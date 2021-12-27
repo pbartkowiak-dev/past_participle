@@ -77,6 +77,14 @@ function QuizView() {
     setInputValue(event.target.value);
   };
 
+  const onKeyPress = (event) => {
+    const { key, ctrlKey } = event;
+    if (key === "Enter" && ctrlKey === true) {
+      event.preventDefault();
+      handleShowAnswer();
+    }
+  };
+
   const handleShowAnswer = () => {
     setShowAnswer(true);
     setShowTranslation(true);
@@ -131,10 +139,19 @@ function QuizView() {
             variant="outlined"
             value={inputValue}
             onChange={handleInput}
+            onKeyPress={onKeyPress}
             autoComplete="off"
           />
         </Box>
       </form>
+      <Typography
+        sx={{ marginTop: 1, marginBottom: 2 }}
+        variant="caption"
+        display="block"
+      >
+        Press <strong>Enter</strong> to submit, press{" "}
+        <strong>Enter + Ctrl</strong> to show the answer.
+      </Typography>
       <Box
         sx={{
           height: "25px",
