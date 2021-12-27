@@ -1,6 +1,6 @@
 # German Verbs Past Participle Quiz
 
-The app has been uploaded on the Github Pages and is available at:  
+The app has been uploaded on the Github Pages and is available at:
 
 https://pbartkowiak-dev.github.io/past_participle/
 

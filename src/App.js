@@ -5,7 +5,7 @@ import QuizView from "./views/quiz-view";
 import { AppBar, Container, Button } from "@mui/material";
 import StoreProvider from "./store";
 
-const views = [
+export const views = [
   { name: "Verbs", route: "/" },
   { name: "Quiz", route: "/quiz" },
 ];

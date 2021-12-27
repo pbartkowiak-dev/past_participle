@@ -14,6 +14,8 @@ import {
 } from "@mui/material";
 import styledComponent from "styled-components";
 import { StoreContext } from "../store";
+import { views } from "../App";
+import { Link } from "react-router-dom";
 
 const DivGrid = styledComponent.div`
 	display: grid;
@@ -39,6 +41,8 @@ function SelectView() {
   const { selectedVerbGroups, setSelectedVerbGroups } = store;
   const verbsGrouped = getVerbsGrouped();
 
+  const quizRoute = views[1];
+
   const handleCheck = ({ target }) => {
     const { value, checked } = target;
 
@@ -53,8 +57,20 @@ function SelectView() {
 
   return (
     <Container>
-      <Typography variant="h4" as={"h1"} sx={{ margin: "20px 0" }}>
+      <Typography variant="h4" as={"h1"} sx={{ margin: "20px 0 5px" }}>
         Select Verb Groups
+      </Typography>
+      <Typography
+        display="block"
+        variant="p"
+        as={"p"}
+        sx={{ color: "gray", marginTop: 0, marginBottom: 2 }}
+      >
+        Then, go to{" "}
+        <Link to={quizRoute.route} style={{ textDecoration: "none" }}>
+          {quizRoute.name} Page
+        </Link>{" "}
+        to practice.
       </Typography>
       <DivGrid>
         {verbsGrouped.map((group, index) => (
