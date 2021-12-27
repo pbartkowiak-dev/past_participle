@@ -9,11 +9,14 @@ import {
   Button,
 } from "@mui/material";
 import { StoreContext } from "../store";
+import InsertSpecialCharBtn from "../comopnents/insert-special-char-btn";
 
 const getRandom = (max) => Math.floor(Math.random() * max);
 
+const inputWidth = "360px";
+
 const Input = styled(TextField)(() => ({
-  minWidth: "360px",
+  minWidth: inputWidth,
   "& .MuiTextField-root": {
     fontSize: 43,
   },
@@ -22,6 +25,18 @@ const Input = styled(TextField)(() => ({
     width: "100%",
   },
 }));
+
+const CharactersBox = styled(Box)(() => ({
+  display: "flex",
+  margin: "0 auto 20px",
+  justifyContent: "space-evenly",
+  width: inputWidth,
+  "@media (max-width: 680px)": {
+    width: "100%",
+  },
+}));
+
+const specialCharacters = ["ä", "ö", "ü", "ß"];
 
 function QuizView() {
   const [inputValue, setInputValue] = useState("");
@@ -92,6 +107,13 @@ function QuizView() {
     setInputValue(currentVerb.partizip_ii);
   };
 
+  const handleInsertSpecialCharacter = (specialCharacter) => {
+    if (specialCharacter) {
+      setInputValue(inputValue + specialCharacter);
+      document.getElementById("quiz-input").focus();
+    }
+  };
+
   if (selectedVerbs.length === 0) {
     return (
       <Container sx={{ textAlign: "center", marginTop: 10 }}>
@@ -134,7 +156,7 @@ function QuizView() {
         </Box>
         <Box sx={{ marginTop: 2, marginBottom: 1 }}>
           <Input
-            id="outlined-basic"
+            id="quiz-input"
             label="Enter Past Participle Form"
             variant="outlined"
             value={inputValue}
@@ -144,8 +166,16 @@ function QuizView() {
           />
         </Box>
       </form>
+      <CharactersBox>
+        {specialCharacters.map((specialCharacter) => (
+          <InsertSpecialCharBtn
+            specialCharacter={specialCharacter}
+            insertFn={handleInsertSpecialCharacter}
+          />
+        ))}
+      </CharactersBox>
       <Typography
-        sx={{ marginTop: 1, marginBottom: 2 }}
+        sx={{ marginTop: 1, marginBottom: 1 }}
         variant="caption"
         display="block"
       >
