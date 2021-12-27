@@ -18,7 +18,10 @@ function App() {
           <Container sx={{ flexGrow: 1, display: { md: "flex" } }}>
             {views.map(({ name, route }) => (
               <Link key={route} to={route} style={{ textDecoration: "none" }}>
-                <Button role="link" sx={{ my: 2, color: "white" }}>
+                <Button
+                  role="link"
+                  sx={{ my: { xs: 1, md: 2 }, color: "white" }}
+                >
                   {name}
                 </Button>
               </Link>

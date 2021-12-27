@@ -78,7 +78,9 @@ function QuizView() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const isCorrect = inputValue.toLowerCase().trim() === currentVerb.partizip_ii.toLowerCase().trim();
+    const isCorrect =
+      inputValue.toLowerCase().trim() ===
+      currentVerb.partizip_ii.toLowerCase().trim();
     if (isCorrect) {
       getNewVerb();
     } else {
@@ -123,7 +125,7 @@ function QuizView() {
   }
 
   return (
-    <Container sx={{ textAlign: "center", marginTop: 10 }}>
+    <Container sx={{ textAlign: "center", marginTop: { md: 10, xs: 2 } }}>
       <form onSubmit={handleSubmit}>
         <Typography variant={"h3"}>{currentVerb.infinitiv}</Typography>
         <Box
@@ -162,6 +164,7 @@ function QuizView() {
             value={inputValue}
             onChange={handleInput}
             onKeyPress={onKeyPress}
+            error={hasError}
             autoComplete="off"
           />
         </Box>
@@ -212,7 +215,9 @@ function QuizView() {
         )}
       </Box>
       {hasError && (
-        <Alert severity="error">This is not correct! Try again.</Alert>
+        <Alert severity="error" sx={{ display: { xs: "none", md: "flex" } }}>
+          This is not correct! Try again.
+        </Alert>
       )}
     </Container>
   );
