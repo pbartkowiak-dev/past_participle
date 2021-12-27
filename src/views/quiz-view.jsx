@@ -78,7 +78,7 @@ function QuizView() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const isCorrect = inputValue.trim() === currentVerb.partizip_ii.trim();
+    const isCorrect = inputValue.toLowerCase().trim() === currentVerb.partizip_ii.toLowerCase().trim();
     if (isCorrect) {
       getNewVerb();
     } else {
