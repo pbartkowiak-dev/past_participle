@@ -8,6 +8,12 @@ const DivGrid = styledComponent.div`
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
 	gap: 20px 10px;
+	@media (max-width: 1020px) {
+    	grid-template-columns: repeat(3, 1fr);
+  	}
+  	@media (max-width: 680px) {
+    	grid-template-columns: repeat(1, 1fr);
+  	}
 `;
 
 const StyledListItemText = styled(ListItemText)(() => ({

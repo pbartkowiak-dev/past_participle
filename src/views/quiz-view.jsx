@@ -8,7 +8,11 @@ const Input = styled(TextField)(() => ({
 	minWidth: '360px',
 	'& .MuiTextField-root': {
 		fontSize: 43
-	}
+	},
+	'@media (max-width: 680px)': {
+		minWidth: 'auto',
+		width: '100%'
+	},
 }));
 
 function QuizView() {
