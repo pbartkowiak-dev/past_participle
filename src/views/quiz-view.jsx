@@ -28,9 +28,10 @@ const Input = styled(TextField)(() => ({
 
 const CharactersBox = styled(Box)(() => ({
   display: "flex",
-  margin: "0 auto 20px",
+  margin: "0 auto 15px",
   justifyContent: "space-evenly",
   width: inputWidth,
+  padding: '0 5px',
   "@media (max-width: 680px)": {
     width: "100%",
   },
@@ -44,7 +45,9 @@ function QuizView() {
   const [hasError, setHasError] = useState(false);
   const [currentVerb, setCurrentVerb] = useState({});
   const [showTranslation, setShowTranslation] = useState(false);
+  const [wasShowTranslationUsed, setWasShowTranslationUsed] = useState(false);
   const [showAnswer, setShowAnswer] = useState(false);
+  const [counter, setCounter] = useState(0);
   const store = useContext(StoreContext);
   const { selectedVerbs } = store;
 
@@ -59,6 +62,7 @@ function QuizView() {
   const getNewVerb = () => {
     setHasError(false);
     setShowTranslation(false);
+    setWasShowTranslationUsed(false);
     setShowAnswer(false);
     setInputValue("");
 
@@ -73,6 +77,8 @@ function QuizView() {
 
   useEffect(() => {
     getNewVerb();
+    setCounter(0);
+    setWasShowTranslationUsed(false);
   }, []);
 
   const handleSubmit = (event) => {
@@ -82,9 +88,13 @@ function QuizView() {
       inputValue.toLowerCase().trim() ===
       currentVerb.partizip_ii.toLowerCase().trim();
     if (isCorrect) {
+      if (!wasShowTranslationUsed) {
+        setCounter(counter + 1);
+      }
       getNewVerb();
     } else {
       setHasError(true);
+      setCounter(0);
     }
   };
 
@@ -105,7 +115,9 @@ function QuizView() {
   const handleShowAnswer = () => {
     setShowAnswer(true);
     setShowTranslation(true);
+    setWasShowTranslationUsed(true);
     setHasError(false);
+    setCounter(0);
     setInputValue(currentVerb.partizip_ii);
   };
 
@@ -125,7 +137,14 @@ function QuizView() {
   }
 
   return (
-    <Container sx={{ textAlign: "center", marginTop: { md: 10, xs: 2 } }}>
+    <Container sx={{ textAlign: "center", marginTop: { md: 4, xs: 2 } }}>
+      <Box sx={{ height: "40px", margin: "0 auto 5px", maxWidth: "450px" }}>
+        {counter >= 2 && (
+          <Alert severity="success" sx={{ padding: "0 16px" }}>
+            <strong>{counter}</strong> verbs in a row. Keep going!
+          </Alert>
+        )}
+      </Box>
       <form onSubmit={handleSubmit}>
         <Typography variant={"h3"}>{currentVerb.infinitiv}</Typography>
         <Box
@@ -149,6 +168,7 @@ function QuizView() {
                 color: "lightgray",
                 cursor: "pointer",
                 marginTop: 1,
+                lineHeight: '18px'
               }}
               onClick={() => setShowTranslation(true)}
             >
@@ -178,12 +198,12 @@ function QuizView() {
         ))}
       </CharactersBox>
       <Typography
-        sx={{ marginTop: 1, marginBottom: 1 }}
+        sx={{ marginTop: 0, marginBottom: 1, lineHeight: "13px" }}
         variant="caption"
         display="block"
       >
         Press <strong>Enter</strong> to submit, press{" "}
-        <strong>Enter + Ctrl</strong> to show the answer.
+        <strong>Enter + Ctrl</strong> to show the answer
       </Typography>
       <Box
         sx={{
@@ -207,6 +227,7 @@ function QuizView() {
               color: "lightgray",
               cursor: "pointer",
               marginTop: 1,
+              lineHeight: '17px'
             }}
             onClick={handleShowAnswer}
           >
@@ -214,11 +235,13 @@ function QuizView() {
           </Typography>
         )}
       </Box>
-      {hasError && (
-        <Alert severity="error" sx={{ display: { xs: "none", md: "flex" } }}>
-          This is not correct! Try again.
-        </Alert>
-      )}
+      <Box sx={{ maxWidth: "450px", margin: "15px auto 0" }}>
+        {hasError && (
+          <Alert severity="error" sx={{ display: { xs: "none", md: "flex" } }}>
+            This is not correct! Try again.
+          </Alert>
+        )}
+      </Box>
     </Container>
   );
 }
