@@ -11,7 +11,7 @@ import {
 import { StoreContext } from "../store";
 import InsertSpecialCharBtn from "../comopnents/insert-special-char-btn";
 
-const getRandom = (max) => Math.floor(Math.random() * max);
+const getRandomIndex = (max) => Math.floor(Math.random() * max);
 
 const inputWidth = "360px";
 
@@ -40,7 +40,7 @@ const specialCharacters = ["ä", "ö", "ü", "ß"];
 
 function QuizView() {
   const [inputValue, setInputValue] = useState("");
-  const [prevRandom, setPrevRandom] = useState(null);
+  const [previousIndex, setPreviousIndex] = useState(null);
   const [hasError, setHasError] = useState(false);
   const [currentVerb, setCurrentVerb] = useState({});
   const [showTranslation, setShowTranslation] = useState(false);
@@ -49,13 +49,11 @@ function QuizView() {
   const { selectedVerbs } = store;
 
   const getNewIndex = (max) => {
-    const random = getRandom(max);
-    if (random === prevRandom) {
+    const newIndex = getRandomIndex(max);
+    if (newIndex === previousIndex) {
       return getNewIndex(max);
-    } else {
-      setPrevRandom(random);
-      return random;
     }
+    return newIndex;
   };
 
   const getNewVerb = () => {
@@ -67,6 +65,8 @@ function QuizView() {
     if (selectedVerbs && selectedVerbs.length) {
       const newIndex = getNewIndex(selectedVerbs.length);
       const newVerb = selectedVerbs[newIndex];
+
+      setPreviousIndex(newIndex);
       setCurrentVerb(newVerb);
     }
   };
