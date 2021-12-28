@@ -130,7 +130,7 @@ function QuizView() {
 
   if (selectedVerbs.length === 0) {
     return (
-      <Container sx={{ textAlign: "center", marginTop: 10 }}>
+      <Container sx={{ textAlign: "center", marginTop: 4 }}>
         <Alert severity="warning">Select some verbs first!</Alert>
       </Container>
     );
@@ -167,7 +167,7 @@ function QuizView() {
                 display: "inline-block",
                 color: "lightgray",
                 cursor: "pointer",
-                marginTop: 1,
+                marginTop: { md: 1, xs: 0 },
                 lineHeight: '18px'
               }}
               onClick={() => setShowTranslation(true)}
