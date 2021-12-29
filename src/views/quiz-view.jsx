@@ -31,7 +31,7 @@ const CharactersBox = styled(Box)(() => ({
   margin: "0 auto 15px",
   justifyContent: "space-evenly",
   width: inputWidth,
-  padding: '0 5px',
+  padding: "0 5px",
   "@media (max-width: 680px)": {
     width: "100%",
   },
@@ -168,7 +168,7 @@ function QuizView() {
                 color: "lightgray",
                 cursor: "pointer",
                 marginTop: { md: 1, xs: 0 },
-                lineHeight: '18px'
+                lineHeight: "18px",
               }}
               onClick={() => setShowTranslation(true)}
             >
@@ -227,7 +227,7 @@ function QuizView() {
               color: "lightgray",
               cursor: "pointer",
               marginTop: 1,
-              lineHeight: '17px'
+              lineHeight: "17px",
             }}
             onClick={handleShowAnswer}
           >
